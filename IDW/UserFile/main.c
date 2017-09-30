@@ -38,9 +38,9 @@ static void IWDG_Config(void)
   IWDG_SetPrescaler(IWDG_Prescaler_128);
   
   /* Set counter reload value to obtain 250ms IWDG Timeout.
-    Counter Reload Value = 250ms/IWDG counter clock period
-                         = 250ms / (LSI/128)
-                         = 0.25s / (LsiFreq/128)
+    Counter Reload Value = 250ms/IWDG counter clock period(T = 1/LsiFreq)
+                         = 250ms / (128/LsiFreq)
+                         = 0.25s / (128/LsiFreq)
                          = LsiFreq/(128 * 4)
                          = LsiFreq/512
    */
